@@ -223,7 +223,7 @@ export default function AssessmentForm() {
                                     key={id}
                                     control={
                                         <Controller
-                                            name={`visaCategories.${id}` as any}
+                                            name={`visaCategories.${id}` as "visaCategories.o1" | "visaCategories.eb1a" | "visaCategories.eb2niw" | "visaCategories.dontKnow"}
                                             control={control}
                                             defaultValue={false}
                                             render={({field}) => (

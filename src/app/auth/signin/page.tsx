@@ -27,7 +27,7 @@ export default function SignIn() {
                 router.refresh();
             }
         } catch (error) {
-            setError('An error occurred during sign in');
+            setError('An error occurred during sign in' + error || '');
         }
     };
 

@@ -5,7 +5,6 @@ import type {LeadStatus} from '@/app/types/lead';
 
 export async function PATCH(
     request: Request,
-    {params}: { params: { id: string } }
 ) {
     try {
         const session = await getServerSession(authOptions);

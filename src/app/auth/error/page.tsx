@@ -2,8 +2,10 @@
 
 import {useRouter, useSearchParams} from 'next/navigation';
 import {Box, Button, Typography} from '@mui/material';
+import {Suspense} from 'react';
 
-export default function ErrorPage() {
+
+function ErrorContent() {
     const searchParams = useSearchParams();
     const error = searchParams.get('error');
     const router = useRouter();
@@ -34,5 +36,22 @@ export default function ErrorPage() {
                 Try Again
             </Button>
         </Box>
+    );
+}
+
+export default function ErrorPage() {
+    return (
+        <Suspense fallback={
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minHeight: '100vh'
+            }}>
+                <Typography>Loading...</Typography>
+            </Box>
+        }>
+            <ErrorContent />
+        </Suspense>
     );
 }
