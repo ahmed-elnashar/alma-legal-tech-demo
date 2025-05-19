@@ -22,6 +22,13 @@ application processes. The platform consists of two main parts:
 - Public-facing assessment form
 - Admin interface for lead management
 
+
+### Live Demo
+
+- Public Lead Form: [https://alma-legal-tech-demo.vercel.app](https://alma-legal-tech-demo.vercel.app)
+- Admin Interface: [https://alma-legal-tech-demo.vercel.app/admin](https://alma-legal-tech-demo.vercel.app/admin)
+
+
 ---
 
 ## 2. GETTING STARTED
