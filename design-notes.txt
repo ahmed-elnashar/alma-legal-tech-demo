@@ -1,0 +1,146 @@
+LEGAL TECH PLATFORM - DESIGN DOCUMENT
+===================================
+Version: 1.0
+Based on current implementation
+
+1. OVERVIEW
+-----------
+A simple legal tech platform consisting of:
+- Public assessment form for immigration cases
+- Admin dashboard for lead management
+- Basic authentication system
+
+2. CURRENT ARCHITECTURE
+----------------------
+
+2.1 Frontend Architecture
+
+    Technology Stack:
+    - Next.js 13+ (App Router)
+    - TypeScript
+    - Material-UI (MUI)
+    - React Hook Form + Yup validation
+    - NextAuth.js for authentication
+
+    Key Components:
+    |-- Public Interface
+    |   |-- MainHeader
+    |   |-- AssessmentForm
+    |
+    |-- Admin Interface
+        |-- AdminSidebar
+        |-- AdminContent
+
+2.2 Current Project Structure
+    /app
+    |-- components/        # React components
+    |-- hooks/            # Custom hooks
+    |-- lib/             # Configurations
+    |-- types/           # TypeScript definitions
+    |-- utils/           # Helper functions
+    |-- api/             # API routes
+
+3. COMPONENT BREAKDOWN
+--------------------
+
+3.1 Public Interface
+
+    MainHeader:
+    - Simple branding and title display
+    - Styled with MUI components
+
+    AssessmentForm:
+    - Multi-field form implementation
+    - Form validation using Yup
+    - Country selection with external API integration
+    - Visa category selection
+    - Responsive design
+
+3.2 Admin Interface
+
+    AdminSidebar:
+    - Fixed width (300px)
+    - Permanent drawer implementation
+    - Basic navigation menu
+    - User profile section
+
+    AdminContent:
+    - Tabulated lead display
+    - Pagination
+    - Status management
+    - Action buttons for lead updates
+
+4. AUTHENTICATION
+----------------
+
+Current Implementation:
+- Credentials-based authentication
+- JWT strategy
+- 30-day session duration
+- Protected admin routes
+- Development credentials:
+  * Email: admin@example.com
+  * Password: admin123
+
+5. DATA MANAGEMENT
+-----------------
+
+5.1 Form Data Structure
+    - First Name
+    - Last Name
+    - Email
+    - Country of Citizenship
+    - Website URL
+    - Visa Categories
+    - Additional Message
+
+5.2 Lead Management
+    States:
+    - PENDING
+    - REACHED_OUT
+
+6. API ENDPOINTS
+---------------
+
+Current Routes:
+- PATCH /api/leads/:id/status
+  Purpose: Update lead status
+  Authentication: Required
+
+Mock Implementation:
+- Currently using mock data
+- Basic error handling
+- Authentication checks
+
+7. VALIDATION
+------------
+
+Form Validation:
+- Required fields validation
+- Email format validation
+- At least one visa category selection
+- Real-time validation feedback
+
+8. STYLING APPROACH
+------------------
+
+Current Implementation:
+- Material-UI components
+- Custom styling through MUI's sx prop
+- Responsive design considerations
+- Gradient backgrounds
+- Custom icons usage
+
+9. CURRENT LIMITATIONS
+--------------------
+
+1. Mock Data:
+   - No permanent data storage
+   - Mock authentication
+   - Simulated lead management
+
+2. Features:
+   - Limited admin functionality
+   - Basic authentication
+   - No real email integration
+   - No data persistence
